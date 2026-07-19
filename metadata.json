@@ -1,0 +1,10 @@
+{
+  "name": "Remix: AI Mock Interviewer",
+  "description": "A full-stack mock interviewer that conducts realistic technical and behavioral interviews based on your resume and target job description.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

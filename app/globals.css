@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), "Inter", sans-serif;
+
+  /* Custom palette colors */
+  --color-cobalt: #2563EB;
+  --color-magenta: #EC4899;
+  --color-slate-bg: #0F172A;
+  --color-off-white: #F8FAFC;
+
+  /* Overriding default Tailwind classes to map to the new palette */
+  --color-slate-950: #0F172A;
+  --color-slate-900: #131B2E;
+  --color-slate-850: #1E293B;
+  --color-slate-800: #334155;
+  --color-slate-700: #475569;
+  --color-slate-600: #64748B;
+  --color-slate-500: #94A3B8;
+  --color-slate-400: #CBD5E1;
+  --color-slate-300: #E2E8F0;
+  --color-slate-200: #F8FAFC;
+  --color-slate-100: #FFFFFF;
+
+  /* Map purple/indigo classes to our new primary (cobalt) and accent (magenta) */
+  --color-purple-500: #2563EB;
+  --color-purple-600: #1D4ED8;
+  --color-purple-700: #1E40AF;
+  --color-purple-400: #EC4899;
+  --color-purple-300: #F472B6;
+  --color-purple-800: #BE185D;
+  --color-purple-900: #831843;
+  --color-purple-950: #1E1B4B;
+
+  --color-indigo-500: #2563EB;
+  --color-indigo-600: #1D4ED8;
+  --color-indigo-400: #EC4899;
+}
+
+/* Base style resets and beautiful background textures */
+body {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  background-attachment: fixed;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Radiant diffused background blobs */
+body::before {
+  content: "";
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(236, 72, 153, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -10;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(37, 99, 235, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -10;
+}
+
+/* Glassmorphism glass-container utility */
+.glass-container {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Radiant buttons: gradient from cobalt blue (#2563EB) to radiant magenta (#EC4899) with an outer glow on hover */
+.radiant-button {
+  background: linear-gradient(135deg, #2563EB 0%, #EC4899 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.3);
+}
+
+.radiant-button:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px 0 rgba(236, 72, 153, 0.5), 0 0 12px 2px rgba(37, 99, 235, 0.3);
+  filter: brightness(1.08);
+}
+
+.radiant-button:active {
+  transform: translateY(0.5px);
+}
+
+/* Beautiful custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 9999px;
+  border: 2px solid #0F172A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
